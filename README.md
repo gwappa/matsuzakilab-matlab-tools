@@ -1,4 +1,6 @@
-# matsuzakilab-matlab-tools
+# Matsuzaki lab MATLAB tools
+
+[![DOI](https://zenodo.org/badge/1024612487.svg)](https://doi.org/10.5281/zenodo.16350164)
 
 A set of MATLAB functions that may be useful for physiology data analysis.
 
