@@ -50,16 +50,19 @@ function [data, header_data] = read_dlc(dlcpath, report_interval, read_block_siz
     read_offset = read_onset + length(columns) - 1;
 
     % read data block
-    data = csvio.parse_data_block(
-        sec, ...
+    data = csvio.parse_data_block( ...
+        src, ...
         SEP, ...
         length(columns), ...
         read_onset, ...
         read_offset, ...
         read_block_size, ...
         report_interval ...
-    )
+    );
     data = array2table(data, "VariableNames", columns);
+    if ~isempty(read_block_size)
+        fprintf("done reading from: %s\n", dlcpath);
+    end
 end
 
 function header_data = read_header_(src, sep)
@@ -67,7 +70,7 @@ function header_data = read_header_(src, sep)
     scorer_row = split(string(scorer_line), sep);
     labels_line = fgetl(src);
     labels_row = split(string(labels_line), sep);
-    ~ = fgetl(src);  % discard the coords line (for now: we are dealing with 2D)
+    fgetl(src);  % discard the coords line (for now: we are dealing with 2D)
 
     has_index = (scorer_row(1) == "scorer");
     if has_index

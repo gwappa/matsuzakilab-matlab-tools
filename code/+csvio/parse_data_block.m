@@ -29,7 +29,7 @@ function data = parse_data_block(src, sep, num_columns, read_onset, read_offset,
         if isempty(strip(line))
             break
         end
-        data(rowidx, :) = csvio.parse_data_line(line, sep, num_columns, read_onset, read_offset)
+        data(rowidx, :) = csvio.parse_data_line(line, sep, num_columns, read_onset, read_offset);
         rowidx = rowidx + 1;
         if ~isempty(report_interval)
             report_offset = report_offset + 1;
