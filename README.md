@@ -10,6 +10,18 @@ A set of MATLAB functions that may be useful for physiology data analysis.
 2. Add the `code` directory to your MATLAB PATH:
    you don't need to 'add subdirectories'.
 
+
+## Demo codes
+
+The `code` directory also contains simple demo codes.
+
+Each demo code file starts with `mlmt_demo...`, followed by the index and the
+short description of what it is about.
+
+Copy the file to wherever appropriate for you, and modify the parameters
+to adapt to your needs to see what it does.
+
+
 ## Available modules and functions
 
 - `csvio`: reads tabular data from comma-separated values (CSV)-like text data.
@@ -22,10 +34,19 @@ A set of MATLAB functions that may be useful for physiology data analysis.
 - `ndPETH`: computes peri-event time histograms (PETHs).
   - `ndPETH.compute`: the main method. The first dimension must correspond to the time base.
   - `ndPETH.options`: for pre-computing PETH-generation options.
+- `plotting`: various tools for plotting
+  - `plotting.fill_between`: achieves something similar to Python Matplotlib's `fill_between`
+    function.
+  - `plotting.fill_between_xlines`: a modification of `fill_between` to create a shaded area
+    representing the time window of e.g. stimulus presentation.
+  - `plotting.raster': generates a raster plot (i.e. draws a set of vertical lines
+    corresponding to event onsets of some sort)
+
 
 ## Reporting problem(s)
 
 Please contact the maintainer.
+
 
 ## License
 
